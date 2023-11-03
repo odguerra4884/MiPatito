@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="css/Estilos.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <div id="container">
+    <h1>Iniciar Sesión</h1>
+    <form action="LoginServlet" method="post">
+        <input type="text" name="correo" placeholder="Correo electrónico" required>
+        <div class="password-container">
+                <input type="password" name="contraseña" id="password" placeholder="Contraseña" required>
+                <i class="icon-eye far fa-eye" id="mostrar-contraseña"></i>
+            </div>
+        <button type="submit">Iniciar Sesión</button>
+        
+    </form>
+    <p>No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
+    </div>
+    <script>
+document.getElementById("mostrar-contraseña").addEventListener("click", function() {
+    var contraseñaInput = document.getElementById("password");
+    if (contraseñaInput.type === "password") {
+        contraseñaInput.type = "text"; // Cambiar el tipo a "text"
+        this.classList.remove("far", "fa-eye"); // Cambiar el ícono a "fa-eye-slash"
+        this.classList.add("far", "fa-eye-slash");
+    } else {
+        contraseñaInput.type = "password"; // Cambiar el tipo a "password"
+        this.classList.remove("far", "fa-eye-slash"); // Cambiar el ícono a "fa-eye"
+        this.classList.add("far", "fa-eye");
+    }
+});
+</script>
+
+</body>
+</html>

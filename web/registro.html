@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="css/Estilos.css" rel="stylesheet" type="text/css"/>
+    <script src="js/script.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Mi Patito, Registro de Cliente</h1>
+        <form action="RegistroServlet" method="post">
+            <div class="text-container"> 
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            </div>
+            <div class="text-container"> 
+            <input type="text" name="nom-usuario" placeholder="Nombre de Usuario" required>
+            </div>
+            <div class="text-container"> 
+            <input type="text" name="correo" placeholder="Correo electrónico" required>
+            </div>
+            <div class="password-container">
+                <input type="password" name="contraseña" id="password" placeholder="Contraseña" required>
+                <i class="icon-eye far fa-eye" id="mostrar-contraseña"></i>
+            </div>
+            <button type="button" id="generar-contraseña">Generar Contraseña Automáticamente</button>
+            <br>
+            <button type="submit">Registrarse</button>
+            <p>Ya Tengo un Usuario. <a href="index.html">Iniciar Sesion</a></p></p>
+        </form>
+        <div id="popup" class="popup">
+        <span id="message">Registro exitoso</span>
+    </div>
+    </div>
+    <script>
+    document.getElementById("generar-contraseña").addEventListener("click", function() {
+        var contraseñaGenerada = generarContraseña();
+        document.getElementById("password").value = contraseñaGenerada;
+    });
+
+    
+    function generarContraseña() {
+        var caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+        var longitud = 12;
+        var contraseña = "";
+        for (var i = 0; i < longitud; i++) {
+            var index = Math.floor(Math.random() * caracteres.length);
+            contraseña += caracteres.charAt(index);
+        }
+        return contraseña;
+    }
+    document.getElementById("mostrar-contraseña").addEventListener("click", function() {
+    var contraseñaInput = document.getElementById("password");
+    if (contraseñaInput.type === "password") {
+        contraseñaInput.type = "text"; // Cambiar el tipo a "text"
+        this.classList.remove("far", "fa-eye"); // Cambiar el ícono a "fa-eye-slash"
+        this.classList.add("far", "fa-eye-slash");
+    } else {
+        contraseñaInput.type = "password"; // Cambiar el tipo a "password"
+        this.classList.remove("far", "fa-eye-slash"); // Cambiar el ícono a "fa-eye"
+        this.classList.add("far", "fa-eye");
+    }
+});
+    </script>
+</body>
+</html>

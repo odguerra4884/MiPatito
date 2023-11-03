@@ -1,0 +1,115 @@
+/* Estilo uniforme para botones */
+button {
+    display: block;
+    background-color: #0074d9;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    
+    transition: background 0.3s; /* Agregar una transición de cambio de color */
+}
+
+/* Estilo de botón resaltado para "Generar Contraseña Automáticamente" */
+#generar-contraseña {
+    background:  #00A8FF; /* Efecto de resaltado */
+    font-weight: bold; /* Texto en negrita */
+}
+#generar-contraseña:hover{
+    background: #005ea6;
+}
+
+/* Cambio de color al pasar el ratón por encima */
+button:hover {
+    background-color: #005ea6; /* Cambiar a un tono más oscuro al pasar el ratón por encima */
+}
+
+/* Estilo para el contenedor principal */
+#container {
+    background: rgba(255, 255, 255, 0.9); /* Fondo transparente */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 350px;
+    padding: 20px;
+    position: relative;
+}
+
+/* Estilos para el formulario y otros elementos */
+form {
+    text-align: left;
+}
+
+input {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.password-container {
+    width: 100%;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.password-container input[type="password"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.password-container .icon-eye {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #0074d9;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Estilos para el mensaje emergente */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #0074d9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+/* Estilo de mensaje de error */
+.popup.error {
+    border-color: #ff0000; /* Cambiar el color del borde a rojo para indicar un error */
+}
+
+/* Estilos para resaltar campos de entrada */
+input.error {
+    border: 1px solid #ff0000; /* Cambiar el borde a rojo para indicar un error */
+}
